@@ -9,6 +9,9 @@
     <Title>Sandip Dust 2020</Title>
     <link rel="stylesheet" type="text/css" href="style/style.css">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+
     <script src="minified/gsap.min.js"></script>
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.0.5/gsap.min.js"
@@ -278,55 +281,251 @@ nav.fill ul li a:hover:after {
 
 
 
+/* Import Google font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+/* *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  padding: 0 35px;
+  min-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  background: #343F4F;
+} */
+.wrapper{
+  display: flex;
+  max-width: 1300px;
+  position: relative;
+  margin-left: 10%;
 
-
-
-.wrapper {
-	min-height: 100vh;
-    background: #1d373f;
-    overflow-x: hidden;
+}
+.wrapper i{
+  top: 50%;
+  height: 44px;
+  width: 44px;
+  color: #343F4F;
+  cursor: pointer;
+  font-size: 1.15rem;
+  position: absolute;
+  text-align: center;
+  line-height: 44px;
+  background: #fff;
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: transform 0.1s linear;
+}
+.wrapper i:active{
+  transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover{
+  background: #f2f2f2;
+}
+.wrapper i:first-child{
+  left: -22px;
+  display: none;
+}
+.wrapper i:last-child{
+  right: -22px;
+}
+.wrapper .carousel{
+  font-size: 0px;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
+  scroll-behavior: smooth;
+}
+.carousel.dragging{
+  cursor: grab;
+  scroll-behavior: auto;
+}
+.carousel.dragging img{
+  pointer-events: none;
+}
+.carousel img{
+  height: 300px;
+  max-width: fit-content;
+  object-fit: cover;
+  user-select: none;
+  margin-left: 14px;
+  padding: 20px;
+  width: calc(100% / 4);
+}
+.carousel img:first-child{
+  margin-left: 0px;
 }
 
-.factsContainer {
-    padding: 0em 2em;
+@media screen and (max-width: 900px) {
+  .carousel img{
+    width: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .carousel img{
+    width: 100%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.hovicon {
+    display: inline-block;
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    margin: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
     text-align: center;
-    line-height: 10vh;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: #fff;
+}
+.hovicon.small {
+    font-size: 20px;
+    line-height:45px;
+    width:45px;
+    height:45px;
+    margin:7px;
+}
+.hovicon.mini {
+    font-size: 15px;
+    line-height:32px;
+    width:30px;
+    height:30px;
+    margin:7px;
+}
+.hovicon.auto-width {
+    width: auto;
+    height: auto;
+    padding: 15px;
+}
+.hovicon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content:'';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.hovicon:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
+}
+.hovicon {
+    display: inline-block;
+    font-size: 45px;
+    line-height: 90px;
+    cursor: pointer;
+    margin: 20px;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    text-align: center;
+    position: relative;
+    text-decoration: none;
+    z-index: 1;
+    color: #fff;
+}
+.hovicon.small {
+    font-size: 20px;
+    line-height:45px;
+    width:45px;
+    height:45px;
+    margin:7px;
+}
+.hovicon.mini {
+    font-size: 15px;
+    line-height:32px;
+    width:30px;
+    height:30px;
+    margin:7px;
+}
+.hovicon.auto-width {
+    width: auto;
+    height: auto;
+    padding: 15px;
+}
+.hovicon:after {
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    content:'';
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+.hovicon:before {
+    speak: none;
+    font-size: 48px;
+    line-height: 90px;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    display: block;
+    -webkit-font-smoothing: antialiased;
 }
 
-.factsContainer h2 {
-    font-size: 1.8em;
-    transform: scale(0);
-    padding: 2em 0em;
-    margin-bottom: 15vh;
-    color: #F0C368;
+/* Effect 5 */
+ .hovicon.effect-5 {
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
+    overflow: hidden;
+    -webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    -moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+}
+.hovicon.effect-5:after {
+    display: none;
+}
+.hovicon.effect-5:hover {
+    background: rgba(255, 255, 255, 1);
+    color: #702fa8;
+    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
+}
+.hovicon.effect-5:hover i {
+    color: #702fa8;
+}
+.hovicon.effect-5.sub-a:hover:before {
+    -webkit-animation: toRightFromLeft 0.3s forwards;
+    -moz-animation: toRightFromLeft 0.3s forwards;
+    animation: toRightFromLeft 0.3s forwards;
 }
 
-.factsContainer_sm {
-    display: flex;
-    width: 300vw;
-}
-
-.fact {
-    display: flex;
-    flex-direction: column;
-    height: 40vh;
-    flex: 1;
-    justify-content: space-between;
-    padding: 1em;
-    align-items: center;
-    color: #F0C368;
-}
-
-.fact img {
-    width: 25vw;
-    height: 25vh;
-    margin: 1em;
-}
-
-.socialContainer{
-  width: 100vw;
-  height: 100vh;
-}
 </style>
 </head>
 
@@ -372,49 +571,20 @@ nav.fill ul li a:hover:after {
     </section>
 
 
-
     <div class="wrapper">
-        <div class="factsContainer">
-        <h2>Few Facts about me</h2>
-        <div class="factsContainer_sm">
-          <div class="fact">
-            <h3>3 words to describe me: </h3>
-            <img src="https://source.unsplash.com/random" alt="">
-            <h3>Creative , Adventourous , Hardworking</h3>
-          </div>
-          <div class="fact">
-            <h3>Favourite Food</h3>
-            <img src="https://source.unsplash.com/random" alt="">
-            <h3>Tonnes of this stuff ^</h3>
-          </div>
-          <div class="fact">
-            <h3>Favourite TV Series</h3>
-            <img src="https://source.unsplash.com/random" alt="">
-            <h3>Nine Nine 🤙</h3>
-          </div>
-          <div class="fact">
-            <h3>Where are you most likely to be found</h3>
-            <img src="https://source.unsplash.com/random" alt="">
-            <h3>With my head in the fridge</h3>
-          </div>
-          <div class="fact">
-            <h3>Favourite Music Artist</h3>
-            <img src="https://source.unsplash.com/random" alt="">
-            <h3>Kygo</h3>
-          </div>
-          <div class="fact">
-            <h3>Favourite Sport</h3>
-            <img src="https://source.unsplash.com/random" alt="">
-            <h3>Swimming</h3>
-          </div>
+        <i id="left" class="fa-solid fa-angle-left"></i>
+        <div class="carousel">
+          <img src="{{ asset('asset/images/burger.png') }}" class="hovicon effect-5 sub-a" alt="img" draggable="false">
+          <img src="{{ asset('asset/images/wonton.png') }}"  draggable="false">
+          <img src="{{ asset('asset/images/soup.png') }}"  draggable="false">
+          <img src="{{ asset('asset/images/salad.png') }}" style="width: 280px"  draggable="false">
+          <img src="{{ asset('asset/images/prawns.png') }}"  draggable="false">
+          <img src="{{ asset('asset/images/kaarhi.png') }}"  draggable="false">
+          <img src="{{ asset('asset/images/kaarhi-2.png') }}"  draggable="false">
+          <img src="{{ asset('asset/images/fruits.png') }}"  draggable="false">
         </div>
-     </div>
-        <div class="socialContainer">
-          <h3>Well</h3>
-        </div>
-     </div>
-
-
+        <i id="right" class="fa-solid fa-angle-right"></i>
+      </div>
 
 
     <section class="second-section">
@@ -666,6 +836,88 @@ document.addEventListener('DOMContentLoaded', () => {
         .setPin('.forth-section')
         .addTo(controller);
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const carousel = document.querySelector(".carousel"),
+firstImg = carousel.querySelectorAll("img")[0],
+arrowIcons = document.querySelectorAll(".wrapper i");
+let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+const showHideIcons = () => {
+    // showing and hiding prev/next icon according to carousel scroll left value
+    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+}
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+    });
+});
+const autoSlide = () => {
+    // if there is no image left to scroll then return from here
+    if(carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+    positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+    let firstImgWidth = firstImg.clientWidth + 14;
+    // getting difference value that needs to add or reduce from carousel left to take middle img center
+    let valDifference = firstImgWidth - positionDiff;
+    if(carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    // if user is scrolling to the left
+    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+}
+const dragStart = (e) => {
+    // updatating global variables value on mouse down event
+    isDragStart = true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft = carousel.scrollLeft;
+}
+const dragging = (e) => {
+    // scrolling images/carousel to left according to mouse pointer
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging = true;
+    carousel.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+    showHideIcons();
+}
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging");
+    if(!isDragging) return;
+    isDragging = false;
+    autoSlide();
+}
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+document.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("touchend", dragStop);
  </script>
 </body>
 
