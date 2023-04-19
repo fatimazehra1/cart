@@ -504,18 +504,25 @@ body{
 /* Effect 5 */
  .hovicon.effect-5 {
     box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
+    background-color: white;
     overflow: hidden;
-    -webkit-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    -moz-transition: background 0.3s, color 0.3s, box-shadow 0.3s;
-    transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+    max-width: 20%;
+    height: 28vh;
+    padding: 20px;
+    -webkit-transition: background 0.1s, color 0.1s, box-shadow 0.3s;
+    -moz-transition: background 0.1s, color 0.1s, box-shadow 0.3s;
+    transition: background 0.1s, color 0.1s, box-shadow 0.3s;
 }
 .hovicon.effect-5:after {
     display: none;
 }
+.hovicon.effect-5:hover img {
+    transform: translateX(5px)
+}
 .hovicon.effect-5:hover {
     background: rgba(255, 255, 255, 1);
     color: #702fa8;
-    box-shadow: 0 0 0 8px rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.3);
 }
 .hovicon.effect-5:hover i {
     color: #702fa8;
