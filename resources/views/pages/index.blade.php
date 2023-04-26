@@ -275,36 +275,20 @@ nav.fill ul li a:hover:after {
 
 
 
-
-
-
-
-
-
-/* Import Google font - Poppins */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
-/* *{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-body{
-  display: flex;
-  padding: 0 35px;
-  min-height: 100vh;
-  align-items: center;
-  justify-content: center;
-  background: #343F4F;
-} */
 .wrapper{
   display: flex;
-  max-width: 1300px;
+  max-width: fit-content;
   position: relative;
-  margin-left: 10%;
-
+  margin-left: 1%;
+  margin-right: 5px;
+  height: 47vh;
+  margin-bottom: 2%;
+}
+.view-btn{
+    margin-bottom: 5%;
 }
 .wrapper i{
+  z-index: 9999;
   top: 50%;
   height: 44px;
   width: 44px;
@@ -338,6 +322,8 @@ body{
   overflow: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
+  padding-top: 19px;
+
 }
 .carousel.dragging{
   cursor: grab;
@@ -503,15 +489,15 @@ body{
 
 /* Effect 5 */
  .hovicon.effect-5 {
-    box-shadow: 0 0 0 4px rgba(255, 255, 255, 1);
-    background-color: white;
+    box-shadow: 0 0 0 4px transparent;
+    background-color: transparent;
     overflow: hidden;
-    max-width: 20%;
-    height: 28vh;
-    padding: 20px;
+    max-width: 24%;
+    height: 36vh;
+    padding: 0px;
     -webkit-transition: background 0.1s, color 0.1s, box-shadow 0.3s;
     -moz-transition: background 0.1s, color 0.1s, box-shadow 0.3s;
-    transition: background 0.1s, color 0.1s, box-shadow 0.3s;
+    transition: background 0.1s, color 0.1s, box-shadow 0.3s , transform 0.3s ease-out;
 }
 .hovicon.effect-5:after {
     display: none;
@@ -519,20 +505,64 @@ body{
 .hovicon.effect-5:hover img {
     transform: translateX(5px)
 }
-.hovicon.effect-5:hover {
-    background: rgba(255, 255, 255, 1);
-    color: #702fa8;
-    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.3);
+.hovicon.effect-5:hover { 
+    background-color: rgba(255, 255, 255, 0.445);
+    box-shadow: 0 0 0 40px rgba(255, 255, 255, 0.445);
 }
-.hovicon.effect-5:hover i {
-    color: #702fa8;
-}
+
 .hovicon.effect-5.sub-a:hover:before {
     -webkit-animation: toRightFromLeft 0.3s forwards;
     -moz-animation: toRightFromLeft 0.3s forwards;
     animation: toRightFromLeft 0.3s forwards;
 }
+/* .hovicon.effect-5.img {
+    transition: transform 0.3s ease-out;
+} */
+.hovicon.effect-5:hover.img {
+    transform: translateX(4px) rotate(7deg);
+}
+.hovicon.img{
+    width: 300px;
+    max-width: 300px;
+}
+.menu {
+    text-align: center;
+    width: 100%;
+}
+ .menu h1{
+    text-align: center;    
+    margin-top: -8%;
+    width: 100%;
+}
+.view-btn{
+    text-align: center;
+}
+.bn3637 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  backface-visibility: hidden;
+  border: 0.3rem solid transparent;
+  border-radius: 3rem;
+}
 
+.bn37 {
+  border-color: transparent;
+  background-color: #fff;
+  color: #000;
+  transition: transform 0.2s cubic-bezier(0.235, 0, 0.05, 0.95);
+}
+  
+.bn37:hover {
+  transform: perspective(1px) scale3d(1.044, 1.044, 1) translateZ(0) !important;
+}
 </style>
 </head>
 
@@ -576,23 +606,28 @@ body{
             </div>
         </div>
     </section>
-
-
+    <div class="menu">
+        <h1>View Our Best Menu</h1>
+    </div>
     <div class="wrapper">
         <i id="left" class="fa-solid fa-angle-left"></i>
         <div class="carousel">
-          <img src="{{ asset('asset/images/burger.png') }}" class="hovicon effect-5 sub-a" alt="img" draggable="false">
-          <img src="{{ asset('asset/images/wonton.png') }}"  draggable="false">
-          <img src="{{ asset('asset/images/soup.png') }}"  draggable="false">
-          <img src="{{ asset('asset/images/salad.png') }}" style="width: 280px"  draggable="false">
-          <img src="{{ asset('asset/images/prawns.png') }}"  draggable="false">
-          <img src="{{ asset('asset/images/kaarhi.png') }}"  draggable="false">
-          <img src="{{ asset('asset/images/kaarhi-2.png') }}"  draggable="false">
-          <img src="{{ asset('asset/images/fruits.png') }}"  draggable="false">
+          <img src="{{ asset('asset/images/burger.png') }}" class="hovicon effect-5 sub-a img" alt="img" draggable="false">
+          <img src="{{ asset('asset/images/wonton.png') }}"  class="hovicon effect-5 sub-a img"  draggable="false">
+          <img src="{{ asset('asset/images/soup.png') }}" class="hovicon effect-5 sub-a img"   draggable="false">
+          <img src="{{ asset('asset/images/salad.png') }}"  class="hovicon effect-5 sub-a img" style="width: 280px"  draggable="false">
+          <img src="{{ asset('asset/images/prawns.png') }}" class="hovicon effect-5 sub-a img"   draggable="false">
+          <img src="{{ asset('asset/images/kaarhi.png') }}" class="hovicon effect-5 sub-a img"    draggable="false">
+          <img src="{{ asset('asset/images/kaarhi-2.png') }}" class="hovicon effect-5 sub-a img"   draggable="false">
+          <img src="{{ asset('asset/images/fruits.png') }}" class="hovicon effect-5 sub-a img"   draggable="false">
         </div>
         <i id="right" class="fa-solid fa-angle-right"></i>
       </div>
 
+
+      <div class="view-btn">
+        <a href="/" class="bn3637 bn37">Button</a>
+      </div>
 
     <section class="second-section">
         <h1>Draw Attention to the Ingredients You Want the Most</h1>
